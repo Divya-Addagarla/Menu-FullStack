@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Cards UI</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f8f8f8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  bottom: 135px;
+  left: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.badge.blue {
+  background: #2563eb;
+}
+
+.card-body {
+  padding: 12px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-row h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.rating {
+  background: #16a34a;
+  color: #fff;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.cuisine {
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #444;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+  <%
+  for(let i=0;i<restaurants.length;i++){
+    %>
+  
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="https://static.vecteezy.com/system/resources/previews/040/703/949/non_2x/ai-generated-royal-feast-master-the-art-of-chicken-biryani-at-home-generative-ai-photo.jpg" alt="Food">
+      <span class="badge blue">Flat 15% OFF</span>
+      <div class="card-body">
+        <div class="title-row">
+          <h3><%=restaurants[i].name %></h3>
+          <span class="rating">3.9★</span>
+        </div>
+        <p class="cuisine">Biryani, Chinese, North Indian</p>
+        <div class="info">
+          <span>₹150 for one</span>
+          <span>30 min</span>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="https://sp4912.github.io/foodrecipe/biryaniimg.jpg" alt="Food">
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Shah Ghouse Hotel & Restaurant</h3>
+          <span class="rating">4.2★</span>
+        </div>
+        <p class="cuisine">North Indian, Mughlai</p>
+        <div class="info">
+          <span>₹400 for one</span>
+          <span>25 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="https://vismaifood.com/storage/app/uploads/public/0ae/185/cba/thumb__1200_0_0_0_auto.jpg" alt="Food">
+      <span class="badge blue">₹100 OFF</span>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Hotel Shadab</h3>
+          <span class="rating">4.1★</span>
+        </div>
+        <p class="cuisine">North Indian, Mughlai, Kebab</p>
+        <div class="info">
+          <span>₹400 for one</span>
+          <span>41 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <img src="https://thumbs.dreamstime.com/z/chicken-biryani-traditional-indian-rice-dish-served-clay-pot-top-view-image-one-meal-108805407.jpg" alt="Food">
+      <span class="badge blue">40% OFF</span>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Paradise Biryani</h3>
+          <span class="rating">4.2★</span>
+        </div>
+        <p class="cuisine">Biryani, Kebab</p>
+        <div class="info">
+          <span>₹400 for one</span>
+          <span>23 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <img src="https://c8.alamy.com/comp/2C7651R/chicken-biryani-tandoori-chicken-biryani-with-basmathi-rice-and-raita-as-side-dish-arranged-in-an-earthenware-and-hot-lemon-tea-with-wooden-backgro-2C7651R.jpg" alt="Food">
+      <span class="badge blue">₹100 OFF</span>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Indian Darbar</h3>
+          <span class="rating">4.0★</span>
+        </div>
+        <p class="cuisine">North Indian, Biryani</p>
+        <div class="info">
+          <span>₹450 for one</span>
+          <span>36 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <img src="https://c.ndtvimg.com/2022-02/ceg29dsg_fish-biryani_625x300_16_February_22.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=675" alt="Food">
+      <span class="badge blue">₹100 OFF</span>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Alpha Hotel</h3>
+          <span class="rating">4.1★</span>
+        </div>
+        <p class="cuisine">North Indian, Chinese</p>
+        <div class="info">
+          <span>₹200 for one</span>
+          <span>34 min</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
